@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Giftcard, Profile
 
-# Register your models here.
+
+admin.site.register(Profile)
+admin.site.register(Giftcard)
