@@ -8,7 +8,6 @@ Vue.use(Vuex);
 const storeOptions: StoreOptions<RootState> = {
   state: {
     version: '1.0.0',
-    main: main.state,
   },
   modules: {
     main,
