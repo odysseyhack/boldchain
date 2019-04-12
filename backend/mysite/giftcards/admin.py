@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Giftcard, Profile
+from .models import Participant, PensionEntity, Giftcard
 
 
-admin.site.register(Profile)
+admin.site.register(Participant)
+admin.site.register(PensionEntity)
 admin.site.register(Giftcard)
