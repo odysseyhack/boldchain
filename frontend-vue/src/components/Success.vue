@@ -1,6 +1,7 @@
 <template>
-  <div class="new-pension">
-    Jij hebt nog geen pensioen! Begin bij ons een pensioen
+  <div class="success">
+    Succes! Een pensioencontributie t.w.v. 1000 euro is toegevoegd: <br />
+    MOOIE STATS
   </div>
 </template>
 
@@ -8,7 +9,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
-export default class NewPension extends Vue {}
+export default class Success extends Vue {}
 </script>
 
 <style scoped lang="scss">

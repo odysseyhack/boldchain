@@ -1,16 +1,12 @@
 <template>
-  <b-card class="pivot-login">
-    <b-card-header>
-      Pivot login
-    </b-card-header>
-    <b-card-body>
-      Er staat zoveel euro op je kaart
-      Pivot login
-      <b-form-input v-model="username" placeholder="Pivot ID/ Digid"></b-form-input>
-      <b-form-input v-model="password" placeholder="Wachtwoord"></b-form-input>
-        <b-button variant="secondary" @click="submit">Voeg to aan pensioen!</b-button>
-    </b-card-body>
-  </b-card>
+  <div class="pivot-login">
+    Pivot login
+    Er staat zoveel euro op je kaart
+    Pivot login
+    <input v-model="username" placeholder="Pivot ID/ Digid" />
+    <input v-model="password" placeholder="Wachtwoord" />
+    <md-button @click="submit">Voeg to aan pensioen!</md-button>
+  </div>
 </template>
 
 <script lang="ts">

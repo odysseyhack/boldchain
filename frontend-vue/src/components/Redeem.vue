@@ -1,11 +1,7 @@
 <template>
-  <b-card class="redeem">
-    <b-card-header>Start your future today</b-card-header>
-    <b-card-body>
-      <b-form-input v-model="code" placeholder="Enter your code"></b-form-input>
-        <b-button variant="secondary" @click="submit()">Redeem</b-button>
-    </b-card-body>
-  </b-card>
+  <div card class="redeem">
+    <md-button class="md-raised md-primary" @click="submit">Primary</md-button>
+  </div>
 </template>
 
 <script lang="ts">

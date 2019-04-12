@@ -1,10 +1,8 @@
 <template>
   <div class="home">
-    <transition name="fade">
-      <redeem v-show="currentStep == 0" @redeemed="currentStep += 1" />
-    </transition>
+    <redeem v-show="currentStep == 0" @redeemed="currentStep += 1" />
     <pivot-login v-show="currentStep == 1" @contributed="currentStep +=1" />
-    <succes v-show="currentStep == 2" />
+    <success v-show="currentStep == 2" />
     <new-pension v-show="currentStep == 3" />
   </div>
 </template>
@@ -13,14 +11,14 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Redeem from '@/components/Redeem.vue';
 import PivotLogin from '@/components/PivotLogin.vue';
-import Succes from '@/components/Succes.vue';
+import Success from '@/components/Success.vue';
 import NewPension from '@/components/NewPension.vue';
 
 @Component({
   components: {
     Redeem,
     PivotLogin,
-    Succes,
+    Success,
     NewPension,
   },
 })
