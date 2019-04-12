@@ -1,7 +1,12 @@
 <template>
   <div class="redeem">
-    <input type="text" v-model="redeemCode" />
-    <input type="submit" value="Redeem code">
+    <b-card>
+      <b-card-header>Start your future today</b-card-header>
+      <b-card-body>
+        <b-form-input v-model="redeemCode" placeholder="Enter your code"></b-form-input>
+         <b-button variant="success" @click="submit">Redeem</b-button>
+      </b-card-body>
+    </b-card>
   </div>
 </template>
 
@@ -12,6 +17,9 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class Redeem extends Vue {
   private redeemCode: string = '';
 
+  private submit(): void {
+
+  }
 }
 </script>
 
