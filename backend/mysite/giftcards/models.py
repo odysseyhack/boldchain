@@ -8,12 +8,11 @@ class Giftcard(models.Model):
     '''
     Model describes the Giftcard
     '''
-    # barcode   = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     barcode   = models.CharField(max_length=100, primary_key=True)
     issued_by = models.ForeignKey('PensionEntity', on_delete=models.CASCADE, null=True)
     amount    = models.FloatField(default=0.0)
-    created   = models.DateTimeField('Date of creation')
-    validity  = models.DateTimeField('Valid until')
+    created   = models.DateTimeField('Date of creation', null=True)
+    validity  = models.DateTimeField('Valid until', null=True)
 
     def __str__(self):
         return "{} - {}".format(self.barcode, self.amount)
@@ -26,7 +25,6 @@ class Participant(models.Model):
     '''
     user       = models.OneToOneField(User, on_delete=models.CASCADE)
     birth_date = models.DateField(null=True, blank=True)
-    # image      = models.ImageField()   # TODO
     bio        = models.TextField(max_length=500, blank=True)
 
     def __str__(self):
