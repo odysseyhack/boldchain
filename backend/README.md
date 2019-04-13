@@ -95,3 +95,13 @@ In browser, open `http://localhost:8000`
       "msg": "Giftcard already used"
   }
   ```
+
+4. [POST] /mockdigid/createuser
+  - query_params: username, password
+  - example: 127.0.0.1:8000/mockdigid/cerateuser?username=new_user&password=test
+  - response:
+  ```
+  {
+      'msg': 'Unable to create user'
+  }
+  ```

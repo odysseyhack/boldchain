@@ -91,8 +91,7 @@ def create_participant(request):
     '''
     try:
         user = User.objects.create_user(username=request.query_params['username'],
-                                        password=request.query_params['password'],
-                                        email=request.query_params['email'])
+                                        password=request.query_params['password'])
         Participant.objects.create(user=user)
     except:
         return Response({'msg': 'Unable to create user'}, status=status.HTTP_400_BAD_REQUEST)
