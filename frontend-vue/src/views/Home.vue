@@ -89,9 +89,6 @@ export default class Home extends Vue {
 .home {
   padding-top: 10rem;
 }
-.card {
-  padding: 5rem;
-}
 .md-card {
   .md-card {
     margin: 2rem;
