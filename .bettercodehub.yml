@@ -1,4 +1,4 @@
-exclude
-  /frontend-vue/node-modules/*
-  /frontend-vue/*.json
-  /frontend-vue/*.js
+exclude:
+-  /frontend-vue/node-modules/*
+-  /frontend-vue/*.json
+-  /frontend-vue/*.js
