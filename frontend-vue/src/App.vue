@@ -8,7 +8,7 @@
 @import "~vue-material/dist/theme/engine"; // Import the theme engine
 
 @include md-register-theme("default", (
-  primary: md-get-palette-color(blue, A200), // The primary color of your application
+  primary: #DD63C5, // The primary color of your application
   accent: md-get-palette-color(red, A200) // The accent or secondary color
 ));
 
@@ -20,7 +20,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
-
 body {
   background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
   -webkit-background-size: cover;
