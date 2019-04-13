@@ -18,7 +18,7 @@
   </md-card>
   <md-card-content></md-card-content>
   <md-card-actions>
-    <md-button class="md-raised md-primary" @click="$emit('goto', 0)">Nog een code</md-button>
+    <md-button class="md-raised md-primary" @click="$emit('goto', 0)">Nog een keer</md-button>
     <md-button class="md-raised md-primary">Leer meer</md-button>
   </md-card-actions>
 </md-card>
@@ -34,7 +34,5 @@ export default class Success extends Vue {}
 <style scoped lang="scss">
 .md-card {
   padding: 3rem;
-}
-img {
 }
 </style>
