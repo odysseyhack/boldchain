@@ -52,5 +52,13 @@ class PensionFund(models.Model):
     def get_entitlements(self, x):
         return json.loads(self.entitlements)
 
+    def get_web_link(self):
+        if self.fund_name == 'abp':
+            return "https://www.abp.nl"
+        elif self.fund_name == 'pfzw':
+            return "https://www.pfzw.nl"
+        else:
+            return "http://127.0.0.1:8080"
+
     def __str__(self):
         return '{} - {} - {}'.format(self.session_id, self.fund_name, self.bsn[0:6])
