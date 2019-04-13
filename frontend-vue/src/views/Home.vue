@@ -8,9 +8,12 @@
           v-bind:is="currentComponent"
           @redeem="(response) => redeem(response)"
           @login="(response) => login(response)"
+          @contribute="(pensionName) => contribute(pensionName)"
           @goto="(step) => currentStep = step"
           :code="redeemCode"
           :amount="amount"
+          :pensions="pensions"
+          :pension-name="contributedPension"
         />
       </transition>
       </b-col>
@@ -41,6 +44,7 @@ export default class Home extends Vue {
   private amount: number = 0;
   private redeemCode: string = '';
   private pensions: { [key: string]: string }[] = [];
+  private contributedPension: string = '';
   private firstName: string = '';
   private lastName: string = '';
 
@@ -65,6 +69,11 @@ export default class Home extends Vue {
     this.lastName = response.last_name;
     this.firstName = response.first_name;
     this.currentStep = 2;
+  }
+
+  private contribute(pensionName: string) {
+    this.contributedPension = pensionName;
+    this.currentStep = 3;
   }
 }
 </script>

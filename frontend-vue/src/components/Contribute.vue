@@ -8,22 +8,20 @@
   <md-card v-for="(pension, index) in pensions" :key="index">
     <md-card-header>
       <md-card-header-text>
-        <div class="md-title">Stichting pensioenfoends ABP</div>
-        <div class="md-title">€ 37 opgebouwd</div>
-        <div class="md-subhead">Vanaf 67 jaar en 3 maanden</div>
+        <div class="md-title">Pensioenfoends {{ pension.ascription }}</div>
+        <div class="md-title">€ {{ pension.fulltime_salary }} opgebouwd</div>
       </md-card-header-text>
 
       <md-card-media>
-        <img src="../assets/U0202.png" alt="ABP">
+        <img :src="getImgUrl(pension.ascription)" v-bind:alt="pension.ascription">
       </md-card-media>
+      <md-card-actions>
+        <md-button class="md-raised md-accent" @click="submit(pension.ascription)">Toevoegen</md-button>
+      </md-card-actions>
     </md-card-header>
   </md-card>
 
   <md-card-content></md-card-content>
-  <md-card-actions>
-    <md-button class="md-raised md-primary" @click="$emit('goto', 0)">Nog een keer</md-button>
-    <md-button class="md-raised md-primary">Leer meer</md-button>
-  </md-card-actions>
 </md-card>
 </template>
 
@@ -33,6 +31,14 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 @Component
 export default class Contribute extends Vue {
   @Prop() private pensions!: { [key: string]: string }[];
+
+  private submit(pensionName: string): void {
+    this.$emit('contribute', pensionName);
+  }
+
+  private getImgUrl(picture: string) {
+    return require('../assets/' + picture + '.png')
+  }
 }
 </script>
 

@@ -12,7 +12,7 @@
       </md-card-header-text>
 
       <md-card-media>
-        <img src="../assets/U0202.png" alt="ABP">
+        <img src="../assets/ABP.png" alt="ABP">
       </md-card-media>
     </md-card-header>
   </md-card>
@@ -25,10 +25,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 
 @Component
-export default class Success extends Vue {}
+export default class Success extends Vue {
+  @Prop() private pensionName!: string;
+
+}
 </script>
 
 <style scoped lang="scss">
