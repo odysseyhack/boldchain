@@ -19,7 +19,7 @@ class ParticipantModelTests(TestCase):
         request  = factory.post('http://127.0.0.1:8000/mockdigid/authenticate?username=TEST&password=TEST')
         response = authenticate_digid(request)
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 401)
         self.assertEqual(response.data['msg'], 'Username or password is wrong')
 
     def test_participant_is_valid(self):
