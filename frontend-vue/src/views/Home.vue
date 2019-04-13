@@ -1,8 +1,21 @@
 <template>
   <div class="home">
-    <transition name="component-fade" mode="out-in">
-      <component v-bind:is="currentComponent" @goto="(step) => currentStep = step" />
-    </transition>
+    <b-row>
+      <b-col md="3"></b-col>
+      <b-col md="6">
+      <transition name="component-fade" mode="out-in">
+        <component
+          v-bind:is="currentComponent"
+          @redeem="(response) => redeem(response)"
+          @login="(response) => login(response)"
+          @goto="(step) => currentStep = step"
+          :code="redeemCode"
+          :amount="amount"
+        />
+      </transition>
+      </b-col>
+      <b-col md="3"></b-col>
+    </b-row>
   </div>
 </template>
 
@@ -23,10 +36,22 @@ import NewPension from '@/components/NewPension.vue';
 })
 export default class Home extends Vue {
   private currentStep: number = 0;
+  private amount: number = 0;
+  private redeemCode: string = '';
 
   get currentComponent(): string {
     const components = ['redeem', 'pivot-login', 'success', 'new-pension'];
     return components[this.currentStep];
+  }
+
+  private redeem(response: { barcode: string, amount: number }): void {
+    this.redeemCode = response.barcode;
+    this.amount = response.amount;
+    this.currentStep = 1;
+  }
+
+  private login(response: {}): void {
+    this.currentStep = 2;
   }
 }
 </script>
@@ -41,5 +66,8 @@ export default class Home extends Vue {
 }
 .home {
   padding-top: 10rem;
+}
+.card {
+  padding: 5rem;
 }
 </style>

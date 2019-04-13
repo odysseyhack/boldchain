@@ -3,13 +3,14 @@
     <md-card-header>
       Digid login
     </md-card-header>
-    Er staat zoveel euro op je kaart. Login met Digid om je pensioen te ontvangen!
     <md-card-content>
+    Er staat {{ amount }} euro op je kaart. Login met Digid om je pensioen te ontvangen!
+    <img src="../assets/digid.png">
       <md-field>
-        <md-input id="username" name="username" v-model="username" placeholder="Pivot ID/ Digid login" />
+        <md-input id="username" name="username" v-model="username" placeholder="Gebruikersnaam" />
       </md-field>
       <md-field>
-        <md-input id="password" name="password" v-model="password" placeholder="Wachtwoord" />
+        <md-input id="password" name="password" type="password" v-model="password" placeholder="Wachtwoord" />
       </md-field>
       <md-button class="md-raised md-primary" @click="submit">Voeg to aan pensioen!</md-button>
     </md-card-content>
@@ -27,25 +28,30 @@ const namespace: string = 'main';
 export default class PivotLogin extends Vue {
 
   @Prop() private code!: string;
-  @Action('contribute', { namespace }) private contribute!: types.ContributeAction;
+  @Prop() private amount!: number;
+  @Action('authenticate', { namespace }) private authenticate!: types.AuthenticateAction;
 
   private username: string = '';
   private password: string = '';
+  private error: boolean = false;
 
   private submit(): void {
-    this.contribute({
+    this.authenticate({
       username: this.username,
       password: this.password,
-      code: this.code })
-    .then((response: {}) => {
-      this.$emit('goto', 2);
-    }).catch(() => {
-      
+    })
+    .then((response) => {
+      this.$emit('login', response);
+    }).catch((error) => {
+      this.error = true;
     })
   }
 }
 </script>
 
 <style scoped lang="scss">
-
+img {
+  max-width: 7rem;
+  margin-top: 2rem;
+}
 </style>
