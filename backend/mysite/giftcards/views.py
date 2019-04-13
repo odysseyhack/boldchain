@@ -9,9 +9,11 @@ from .serializers import GiftcardsSerializer
 def giftcard_valid(request):
     '''
     Check if gift card is valid
+
+    Example call: http://127.0.0.1:8000/giftcards/valid?barcode=INVALIDBARCODE
     '''
     try:
-        giftcard = Giftcard.objects.get(barcode=request.GET['barcode'])
+        giftcard = Giftcard.objects.get(barcode=request.query_params['barcode'])
     except Giftcard.DoesNotExist:
         return Response({'msg': 'Invalid barcode'}, status=status.HTTP_400_BAD_REQUEST)
 

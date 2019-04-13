@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'giftcards.apps.GiftcardsConfig',
+    'mockdigid.apps.MockdigidConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
