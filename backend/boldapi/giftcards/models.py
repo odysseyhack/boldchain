@@ -11,6 +11,7 @@ class Giftcard(models.Model):
     barcode   = models.CharField(max_length=100, primary_key=True)
     issued_by = models.ForeignKey('PensionEntity', on_delete=models.CASCADE, null=True)
     amount    = models.FloatField(default=0.0)
+    used      = models.BooleanField(default=False)
     created   = models.DateTimeField('Date of creation', null=True)
     validity  = models.DateTimeField('Valid until', null=True)
 

@@ -24,20 +24,20 @@ export default class Redeem extends Vue {
 
   private code: string = '';
   private error: boolean = false;
+  private redeeming: boolean = false;
 
   private submit(): void {
-    this.redeemCode(this.code).then((response: {}) => {
-      this.$emit('goto', 1);
-    }).catch(() => {
-      
+    this.redeeming = true;
+    this.redeemCode(this.code).then((response: { [key: string]: any }) => {
+      console.log(response);
+      this.$emit('redeem', response);
+    }).catch((error: string) => {
+      console.log(error);
+    }).finally(() => {
+      this.redeeming = false;
     })
   }
 }
-// Pivot kan de contributie doen
-// Pivot sturen we een naam/geboortedatum
-// ---- netto pensioenproduct voor no-pensioeners
-// -- wij sturen pivot de digid/pivid en de geldwaarde en de leeftijd
-// -- Pivot doet de transactie voor ons en de prognose
 
 </script>
 

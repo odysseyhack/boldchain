@@ -33,6 +33,7 @@ class PensionFund(models.Model):
     )
 
     session_id  = models.CharField(max_length=100, primary_key=True)
+    amount      = models.FloatField(default=0.0)
     bsn         = models.CharField(max_length=100)
     participant = models.ForeignKey(Participant, on_delete=models.CASCADE, null=True)
     fund_name   = models.CharField(max_length=5, choices=FUND_CHOICES, default=ABP)
@@ -52,4 +53,4 @@ class PensionFund(models.Model):
         return json.loads(self.entitlements)
 
     def __str__(self):
-        return '{} - {}'.format(self.fund_name, self.bsn[0:6])
+        return '{} - {} - {}'.format(self.session_id, self.fund_name, self.bsn[0:6])
