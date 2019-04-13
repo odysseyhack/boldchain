@@ -25,7 +25,7 @@ SECRET_KEY = '6htj2=xw@dgpdf!%^4c(sy=^ib6n0em(y=988#$x0hlr)ujmns'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
