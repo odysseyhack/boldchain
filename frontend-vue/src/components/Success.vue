@@ -37,9 +37,10 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
+import ImgUrls from '@/mixins/ImgUrls.vue';
 
 @Component
-export default class Success extends Vue {
+export default class Success extends ImgUrls {
   @Prop() private pensionName!: string;
 
   private showSpan: boolean = false;
@@ -47,9 +48,6 @@ export default class Success extends Vue {
   private mounted() {
     setTimeout(() => { this.showSpan = true }, 2000)
   }
-  private getImgUrl (picture: string) {
-      return require('../assets/' + picture + '.png');
-  };
 }
 </script>
 
