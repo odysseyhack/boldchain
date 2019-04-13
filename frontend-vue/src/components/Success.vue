@@ -1,7 +1,7 @@
 <template>
 <md-card class="success">
   <md-card-header>
-      <div class="md-title">Success! Wij hebben je pensioen toegevoegd aan je onderstaande pensioenfonds:</div>
+      <div class="md-title">Succes! Wij hebben je pensioen toegevoegd aan je onderstaande pensioenfonds:</div>
   </md-card-header>
   <md-card>
     <md-card-header>

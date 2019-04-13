@@ -10,7 +10,12 @@ import { Component, Mixin, Mixins } from 'vue-mixin-decorator';
 @Mixin
 export default class MyMixin extends Vue {
   private getImgUrl (picture: string) {
-    return require('../assets/' + picture + '.png');
+    try {
+      const img =  require('../assets/' + picture + '.png');
+      return img;
+    } catch {
+      const img =  require('../assets/empty-img.png');
+    }
   };
 }
 </script>
