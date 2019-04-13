@@ -69,19 +69,10 @@ def add_to_fund(request):
     except PensionFund.DoesNotExist:
         return Response({'msg': 'Invalid Pension Fund'}, status=status.HTTP_400_BAD_REQUEST)
 
-    if not pension_fund.active:
-        return Response({'msg': 'Pension Fund is not Active'}, status=status.HTTP_400_BAD_REQUEST)
-
-    if giftcard.used:
-        return Response({'msg': 'Giftcard already used'}, status=status.HTTP_400_BAD_REQUEST)
-
     pension_fund.amount += giftcard.amount
     pension_fund.save()
 
-    return Response({
-            'amount': pension_fund.amount,
-            'msg': 'Amount added to pension fund'
-        }, status=status.HTTP_200_OK)
+    return Response({'amount': pension_fund.amount, 'msg': 'Amount added to pension fund'}, status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])
