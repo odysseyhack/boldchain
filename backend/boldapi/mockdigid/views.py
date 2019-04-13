@@ -72,7 +72,11 @@ def add_to_fund(request):
     pension_fund.amount += giftcard.amount
     pension_fund.save()
 
-    return Response({'amount': pension_fund.amount, 'msg': 'Amount added to pension fund'}, status=status.HTTP_200_OK)
+    return Response({
+            'amount': pension_fund.amount,
+            'msg': 'Amount added to pension fund',
+            'link': pension_fund.get_web_link()
+        }, status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])
