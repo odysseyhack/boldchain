@@ -17,6 +17,7 @@
 2. django v2.1.7
 3. miniconda
 4. Pillow
+5. Vue.js
 
 ```
 conda env create -f environment.yml
