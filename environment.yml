@@ -23,8 +23,10 @@ dependencies:
   - xz=5.2.4=h14c3975_4
   - zlib=1.2.11=h7b6447c_3
   - pip:
+    - django-filter==2.1.0
+    - djangorestframework==3.9.2
+    - markdown==3.1
     - mock==2.0.0
     - numpy==1.16.1
     - pbr==5.1.2
-prefix: /home/akash/miniconda3/envs/odyssey
-
+    - pillow==6.0.0
