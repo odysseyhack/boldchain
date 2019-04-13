@@ -1,6 +1,6 @@
 exclude:
- - ".*/frontend-vue/node-modules/.*"
- - ".*/frontend-vue/.*[.]json"
- - ".*/frontend-vue/jest[.]config[.]js"
- - ".*/frontend-vue/main[.]ts"
- - ".*/backend/boldapi/settings[.]py"
+- .*/frontend-vue/node-modules/.*
+- .*/frontend-vue/.*[.]json
+- .*/frontend-vue/jest[.]config[.]js
+- .*/frontend-vue/main[.]ts
+- .*/backend/boldapi/boldapi/settings[.]py
