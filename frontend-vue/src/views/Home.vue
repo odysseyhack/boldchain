@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <b-row>
-      <b-col lg="3"></b-col>
-      <b-col lg="6">
+      <b-col lg="2"></b-col>
+      <b-col lg="8">
       <transition name="component-fade" mode="out-in">
         <component
           v-bind:is="currentComponent"
@@ -17,7 +17,7 @@
         />
       </transition>
       </b-col>
-      <b-col lg="3"></b-col>
+      <b-col lg="2"></b-col>
     </b-row>
   </div>
 </template>
@@ -90,6 +90,7 @@ export default class Home extends Vue {
   padding-top: 10rem;
 }
 .md-card {
+  padding: 2rem !important;
   .md-card {
     margin: 2rem;
   }

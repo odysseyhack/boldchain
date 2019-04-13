@@ -32,8 +32,14 @@
   </transition>
   </md-card-content>
   <md-card-actions>
-    <md-button class="md-raised md-primary" @click="$emit('goto', 0)">nog een kaart toevoegen</md-button>
-    <md-button class="md-raised md-primary">meer over mijn pensioen weten</md-button>
+    <b-row>
+      <b-col md="6">
+        <md-button class="md-raised md-primary" @click="$emit('goto', 0)">extra kaart toevoegen</md-button>
+      </b-col>
+      <b-col md="6">
+        <md-button class="md-raised md-primary">Leer over pensioenen</md-button>
+      </b-col>
+    </b-row>
   </md-card-actions>
 </md-card>
 </template>
