@@ -15,9 +15,19 @@
           </b-col>
         </b-row>
       </md-card-header-text>
-
     </md-card-header>
   </md-card>
+      <md-card-content>
+        <trend
+          :data="[0, 3, 4, 5, 6, 7, 9, 13, 21, 34]"
+          :gradient="['#DD63C5', '#DD63C5', '#DD63C5']"
+          auto-draw
+          smooth>
+        </trend>
+      <transition name="component-fade" mode="out-in">
+        <span v-show="showSpan"><h1>€ 10000</h1></span>
+      </transition>
+      </md-card-content>
   <md-card-actions>
     <md-button class="md-raised md-primary" @click="$emit('goto', 0)">Nog een keer</md-button>
     <md-button class="md-raised md-primary">Leer meer</md-button>
@@ -32,6 +42,11 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 export default class Success extends Vue {
   @Prop() private pensionName!: string;
 
+  private showSpan: boolean = false;
+
+  private mounted() {
+    setTimeout(() => { this.showSpan = true }, 2000)
+  }
   private getImgUrl (picture: string) {
       return require('../assets/' + picture + '.png');
   };
