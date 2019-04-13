@@ -32,6 +32,7 @@ def _get_participant_pension_funds(participant):
 
     return response
 
+
 @api_view(['POST'])
 def authenticate_digid(request):
     '''
@@ -53,6 +54,7 @@ def authenticate_digid(request):
             'bio'          : participant.bio,
             'pension_funds': _get_participant_pension_funds(participant)
         }, status=status.HTTP_200_OK)
+
 
 @api_view(['PUT'])
 def add_to_fund(request):
@@ -80,3 +82,19 @@ def add_to_fund(request):
             'amount': pension_fund.amount,
             'msg': 'Amount added to pension fund'
         }, status=status.HTTP_200_OK)
+
+
+@api_view(['POST'])
+def create_participant(request):
+    '''
+    Create a new user
+    '''
+    try:
+        user = User.objects.create_user(username=request.query_params['username'],
+                                        password=request.query_params['password'],
+                                        email=request.query_params['email'])
+        Participant.objects.create(user=user)
+    except:
+        return Response({'msg': 'Unable to create user'}, status=status.HTTP_400_BAD_REQUEST)
+
+    return Response({'msg': 'Created new user'}, status=status.HTTP_200_OK)
