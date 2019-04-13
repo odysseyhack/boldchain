@@ -1,11 +1,11 @@
 <template>
   <md-card class="redeem">
-    <md-card-header><h1>Voer kaartcode in</h1></md-card-header>
+    <md-card-header><h1>Haal je pensioen bijdrage op</h1></md-card-header>
     <md-card-content>
       <md-field>
-        <md-input id="code" name="code" v-model="code" maxlength="20" />
+        <md-input id="code" name="code" v-model="code" maxlength="20" placeholder="voer hier je kaartcode in" />
       </md-field>
-      <md-button class="md-raised md-primary" @click="submit">Invoeren</md-button>
+      <md-button class="md-raised md-primary" @click="submit">Voeg toe</md-button>
     </md-card-content>
   </md-card>
 </template>
