@@ -53,4 +53,4 @@ class PensionFund(models.Model):
         return json.loads(self.entitlements)
 
     def __str__(self):
-        return '{} - {}'.format(self.fund_name, self.bsn[0:6])
+        return '{} - {} - {}'.format(self.session_id, self.fund_name, self.bsn[0:6])
