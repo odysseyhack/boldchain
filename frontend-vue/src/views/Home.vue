@@ -1,9 +1,8 @@
 <template>
   <div class="home">
-    <redeem v-show="currentStep == 0" @redeemed="currentStep += 1" />
-    <pivot-login v-show="currentStep == 1" @contributed="currentStep +=1" />
-    <success v-show="currentStep == 2" />
-    <new-pension v-show="currentStep == 3" />
+    <transition name="component-fade" mode="out-in">
+      <component v-bind:is="currentComponent" @redeemed="currentStep += 1" @contributed="currentStep +=1" />
+    </transition>
   </div>
 </template>
 
@@ -25,5 +24,22 @@ import NewPension from '@/components/NewPension.vue';
 export default class Home extends Vue {
   private currentStep: number = 0;
 
+  get currentComponent(): string {
+    const components = ['redeem', 'pivot-login', 'success', 'new-pension'];
+    return components[this.currentStep];
+  }
 }
 </script>
+
+<style lang="scss">
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+.home {
+  padding-top: 10rem;
+}
+</style>

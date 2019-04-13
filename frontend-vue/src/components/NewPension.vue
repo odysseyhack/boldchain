@@ -1,7 +1,10 @@
 <template>
-  <div class="new-pension">
-    Jij hebt nog geen pensioen! Begin bij ons een pensioen
-  </div>
+  <md-card class="new-pension">
+    <md-card-header>Nieuw pensioen</md-card-header>
+    <md-card-content>
+      Jij hebt nog geen pensioen! Begin bij ons een pensioen
+    </md-card-content>
+  </md-card>
 </template>
 
 <script lang="ts">

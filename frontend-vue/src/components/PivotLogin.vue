@@ -1,12 +1,20 @@
 <template>
-  <div class="pivot-login">
-    Pivot login
+  <md-card class="pivot-login">
+    <md-card-header>
+      Pivot login
+    </md-card-header>
     Er staat zoveel euro op je kaart
     Pivot login
-    <input v-model="username" placeholder="Pivot ID/ Digid" />
-    <input v-model="password" placeholder="Wachtwoord" />
-    <md-button @click="submit">Voeg to aan pensioen!</md-button>
-  </div>
+    <md-card-content>
+      <md-field>
+        <md-input id="username" name="username" v-model="username" placeholder="Pivot ID/ Digid login" />
+      </md-field>
+      <md-field>
+        <md-input id="password" name="password" v-model="password" placeholder="Wacthwoord" />
+      </md-field>
+      <md-button class="md-raised md-primary" @click="submit">Voeg to aan pensioen!</md-button>
+    </md-card-content>
+  </md-card>
 </template>
 
 <script lang="ts">

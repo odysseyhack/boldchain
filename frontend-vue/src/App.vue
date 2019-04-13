@@ -1,11 +1,7 @@
 <template>
-  <div id="app" class="page-container">
-    <md-app>
-      <md-app-content>
-      <router-view />
-      </md-app-content>
-    </md-app>
-  </div>
+  <b-container id="app" class="page-container">
+    <router-view />
+  </b-container>
 </template>
 
 <style lang="scss">
@@ -17,11 +13,11 @@
 
 @import "~vue-material/dist/theme/all"; // Apply the theme
 
-
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
+
 </style>

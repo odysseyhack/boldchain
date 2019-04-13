@@ -1,7 +1,13 @@
 <template>
-  <div card class="redeem">
-    <md-button class="md-raised md-primary" @click="submit">Primary</md-button>
-  </div>
+  <md-card class="redeem">
+    <md-card-header><h1>Voer kaartcode in</h1></md-card-header>
+    <md-card-content>
+      <md-field>
+        <md-input id="code" name="code" v-model="code" />
+      </md-field>
+      <md-button class="md-raised md-primary" @click="submit">Invoeren</md-button>
+    </md-card-content>
+  </md-card>
 </template>
 
 <script lang="ts">
@@ -36,6 +42,5 @@ export default class Redeem extends Vue {
 </script>
 
 <style scoped lang="scss">
-
 </style>
 
