@@ -1,18 +1,28 @@
 <template>
   <md-card class="pivot-login">
     <md-card-header>
-      Digid login
     </md-card-header>
     <md-card-content>
-    Er staat {{ amount }} euro op je kaart. Login met Digid om je pensioen te ontvangen!
-    <img src="../assets/digid.png">
+      <h2>
+    Zo lief, je hebt <span class="amount">€{{ amount }}</span> pensioenbijdrage cadeau gekregen. Dat kan wel <span class="amount">€200</span> bij een pensioenfonds worden!
+      </h2>
+      <p>
+        Login met je Digid om het toe te voegen aan je pensioen.
+      </p>
+    <b-row>
+      <b-col cols="3">
+      <img src="../assets/digid.png">
+      </b-col>
+      <b-col cols="9">
       <md-field>
         <md-input id="username" name="username" v-model="username" placeholder="Gebruikersnaam" maxlength="20" />
       </md-field>
       <md-field>
         <md-input id="password" name="password" type="password" v-model="password" placeholder="Wachtwoord" maxlength="20" />
       </md-field>
-      <md-button class="md-raised md-primary" @click="submit">Voeg to aan pensioen!</md-button>
+      </b-col>
+    </b-row>
+      <md-button class="md-raised md-primary" @click="submit">Login en voeg to aan mijn pensioen</md-button>
     </md-card-content>
   </md-card>
 </template>
@@ -53,5 +63,9 @@ export default class PivotLogin extends Vue {
 img {
   max-width: 7rem;
   margin-top: 2rem;
+}
+.amount {
+  color: green;
+  font-weight: bold;
 }
 </style>

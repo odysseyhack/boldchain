@@ -1,7 +1,7 @@
 <template>
 <md-card class="success">
   <md-card-header>
-      <div class="md-title">Success! Wij hebben je pensioen toegevoegd aan je onderstaande pensioenfonds:</div>
+      <div class="md-title">Gelukt! Je cadeau is toegevoegd aan je onderstaande pensioenfonds:</div>
   </md-card-header>
   <md-card>
     <md-card-header>
@@ -28,9 +28,10 @@
     <span v-show="showSpan"><h1>€ 10000</h1></span>
   </transition>
   </md-card-content>
+  <p>Top, klaar. Ik wil nu:</p>
   <md-card-actions>
-    <md-button class="md-raised md-primary" @click="$emit('goto', 0)">Nog een keer</md-button>
-    <md-button class="md-raised md-primary">Leer meer</md-button>
+    <md-button class="md-raised md-primary" @click="$emit('goto', 0)">nog een kaart toevoegen</md-button>
+    <md-button class="md-raised md-primary">meer over mijn pensioen weten</md-button>
   </md-card-actions>
 </md-card>
 </template>

@@ -21,11 +21,7 @@
   text-align: center;
 }
 body {
-  background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+  background: url('/src/assets/bg.png') repeat-y;
 }
 
 </style>
