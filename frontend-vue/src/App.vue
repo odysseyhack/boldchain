@@ -9,7 +9,7 @@
 
 @include md-register-theme("default", (
   primary: #DD63C5, // The primary color of your application
-  accent: #FF9D42 // The accent or secondary color
+  accent: green // The accent or secondary color
 ));
 
 @import "~vue-material/dist/theme/all"; // Apply the theme

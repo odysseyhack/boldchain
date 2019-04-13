@@ -3,7 +3,7 @@
     <md-card-header><h1>Voer kaartcode in</h1></md-card-header>
     <md-card-content>
       <md-field>
-        <md-input id="code" name="code" v-model="code" />
+        <md-input id="code" name="code" v-model="code" maxlength="20" />
       </md-field>
       <md-button class="md-raised md-primary" @click="submit">Invoeren</md-button>
     </md-card-content>
