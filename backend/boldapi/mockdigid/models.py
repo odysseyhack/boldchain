@@ -21,14 +21,25 @@ class PensionFund(models.Model):
     '''
     Details of the pension fund
     '''
-    bsn        = models.CharField(max_length=100, primary_key=True)
-    fund_name  = models.CharField(max_length=100)
-    active     = models.BooleanField(default=False)
+    ABP      = 'abp'
+    PFZW     = 'pfzw'
+    SOMEFUND = 'sf'
+    GOLDFUND = 'gf'
+    FUND_CHOICES = (
+        (ABP, 'ABP fund'),
+        (PFZW, 'PFZW Fund'),
+        (SOMEFUND, 'Some Fund'),
+        (GOLDFUND, 'Gold Fund'),
+    )
 
-    ascription = models.CharField(max_length=100, null=True)
-    eligible   = models.BooleanField(default=True)
-    start_date = models.DateField(null=True, blank=True)
-    end_date   = models.DateField(null=True, blank=True)
+    bsn         = models.CharField(max_length=100)
+    participant = models.OneToOneField(Participant, on_delete=models.CASCADE, null=True)
+    fund_name   = models.CharField(max_length=5, choices=FUND_CHOICES, default=ABP)
+    active      = models.BooleanField(default=False)
+    ascription  = models.CharField(max_length=100, null=True)
+    eligible    = models.BooleanField(default=True)
+    start_date  = models.DateField(null=True, blank=True)
+    end_date    = models.DateField(null=True, blank=True)
 
     fulltime_salary = models.FloatField(default=0.0)
     entitlements    = models.CharField(max_length=1000)
@@ -38,3 +49,6 @@ class PensionFund(models.Model):
 
     def get_entitlements(self, x):
         return json.loads(self.entitlements)
+
+    def __str__(self):
+        return '{} - {}'.format(self.fund_name, self.bsn[0:6])
