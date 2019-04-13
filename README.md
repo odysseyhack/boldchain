@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <img align="left" src="logo.jpeg" height=100/>
+      <img align="left" src="logo.jpeg" height=90/>
     </div>
     <div class="col">
       <h1 align="justify">
