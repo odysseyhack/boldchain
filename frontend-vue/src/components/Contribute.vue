@@ -34,6 +34,7 @@ import ImgUrls from '@/mixins/ImgUrls.vue';
 @Component
 export default class Contribute extends ImgUrls {
   @Prop() private pensions!: { [key: string]: string }[];
+  @Prop() private amount!: { [key: string]: string }[];
 
   private submit(pensionName: string): void {
     this.$emit('contribute', pensionName);
