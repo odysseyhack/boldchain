@@ -45,6 +45,7 @@ import ImgUrls from '@/mixins/ImgUrls.vue';
 @Component
 export default class Success extends ImgUrls {
   @Prop() private pensionName!: string;
+  @Prop() private pensionUrl!: string;
 
   private showSpan: boolean = false;
   private showMsg: boolean = false;

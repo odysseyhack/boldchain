@@ -21,7 +21,9 @@
   text-align: center;
 }
 body {
-  background: url('/src/assets/bg.png') repeat-y;
+  background: url('./assets/bg.png');
+  background-size: 100% auto;
+  background-repeat: repeat-y;
 }
 
 </style>
