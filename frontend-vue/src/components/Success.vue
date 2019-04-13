@@ -27,8 +27,10 @@
   <transition name="component-fade" mode="out-in">
     <span v-show="showSpan"><h1>€ 10000</h1></span>
   </transition>
+  <transition name="component-fade" mode="out-in">
+    <span v-show="showMsg">Top, klaar. Ik wil nu:</span>
+  </transition>
   </md-card-content>
-  <p>Top, klaar. Ik wil nu:</p>
   <md-card-actions>
     <md-button class="md-raised md-primary" @click="$emit('goto', 0)">nog een kaart toevoegen</md-button>
     <md-button class="md-raised md-primary">meer over mijn pensioen weten</md-button>
@@ -45,9 +47,11 @@ export default class Success extends ImgUrls {
   @Prop() private pensionName!: string;
 
   private showSpan: boolean = false;
+  private showMsg: boolean = false;
 
   private mounted() {
-    setTimeout(() => { this.showSpan = true }, 2000)
+    setTimeout(() => { this.showSpan = true }, 2000);
+    setTimeout(() => { this.showMsg = true }, 2800);
   }
 }
 </script>
