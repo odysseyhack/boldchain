@@ -27,7 +27,7 @@ export default class Redeem extends Vue {
 
   private submit(): void {
     this.redeemCode(this.code).then((response: {}) => {
-      this.$emit('redeemed', response);
+      this.$emit('goto', 1);
     }).catch(() => {
       
     })

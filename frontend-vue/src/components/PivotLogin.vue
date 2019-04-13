@@ -10,7 +10,7 @@
         <md-input id="username" name="username" v-model="username" placeholder="Pivot ID/ Digid login" />
       </md-field>
       <md-field>
-        <md-input id="password" name="password" v-model="password" placeholder="Wacthwoord" />
+        <md-input id="password" name="password" v-model="password" placeholder="Wachtwoord" />
       </md-field>
       <md-button class="md-raised md-primary" @click="submit">Voeg to aan pensioen!</md-button>
     </md-card-content>
@@ -39,7 +39,7 @@ export default class PivotLogin extends Vue {
       password: this.password,
       code: this.code })
     .then((response: {}) => {
-      this.$emit('contributed', response);
+      this.$emit('goto', 2);
     }).catch(() => {
       
     })

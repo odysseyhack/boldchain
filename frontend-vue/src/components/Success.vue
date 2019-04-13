@@ -1,11 +1,27 @@
 <template>
-  <md-card class="success">
-    <md-card-header>Succes!</md-card-header>
-    <md-card-content>
-      Succes! Een pensioencontributie t.w.v. 1000 euro is toegevoegd! <br />
-      Mooie stats
-    </md-card-content>
+<md-card class="success">
+    <md-card-header>
+        <div class="md-title">Success! Wij hebben je pensioen toegevoegd aan je onderstaande pensioenfonds:</div>
+    </md-card-header>
+  <md-card>
+    <md-card-header>
+      <md-card-header-text>
+        <div class="md-title">Stichting pensioenfoends ABP</div>
+        <div class="md-title">€ 37 opgebouwd</div>
+        <div class="md-subhead">Vanaf 67 jaar en 3 maanden</div>
+      </md-card-header-text>
+
+      <md-card-media>
+        <img src="../assets/U0202.png" alt="ABP">
+      </md-card-media>
+    </md-card-header>
   </md-card>
+  <md-card-content></md-card-content>
+  <md-card-actions>
+    <md-button class="md-raised md-primary" @click="$emit('goto', 0)">Nog een code</md-button>
+    <md-button class="md-raised md-primary">Leer meer</md-button>
+  </md-card-actions>
+</md-card>
 </template>
 
 <script lang="ts">
@@ -16,5 +32,9 @@ export default class Success extends Vue {}
 </script>
 
 <style scoped lang="scss">
-
+.md-card {
+  padding: 3rem;
+}
+img {
+}
 </style>

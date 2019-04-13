@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <transition name="component-fade" mode="out-in">
-      <component v-bind:is="currentComponent" @redeemed="currentStep += 1" @contributed="currentStep +=1" />
+      <component v-bind:is="currentComponent" @goto="(step) => currentStep = step" />
     </transition>
   </div>
 </template>
