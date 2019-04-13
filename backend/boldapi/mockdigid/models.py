@@ -58,7 +58,7 @@ class PensionFund(models.Model):
         elif self.fund_name == 'pfzw':
             return "https://www.pfzw.nl"
         else:
-            return "http://127.0.0.1:8080"
+            return "https://www.abp.nl"
 
     def __str__(self):
         return '{} - {} - {}'.format(self.session_id, self.fund_name, self.bsn[0:6])
