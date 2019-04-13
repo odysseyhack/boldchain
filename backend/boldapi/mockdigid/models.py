@@ -32,8 +32,9 @@ class PensionFund(models.Model):
         (GOLDFUND, 'Gold Fund'),
     )
 
+    session_id  = models.CharField(max_length=100, primary_key=True)
     bsn         = models.CharField(max_length=100)
-    participant = models.OneToOneField(Participant, on_delete=models.CASCADE, null=True)
+    participant = models.ForeignKey(Participant, on_delete=models.CASCADE, null=True)
     fund_name   = models.CharField(max_length=5, choices=FUND_CHOICES, default=ABP)
     active      = models.BooleanField(default=False)
     ascription  = models.CharField(max_length=100, null=True)
