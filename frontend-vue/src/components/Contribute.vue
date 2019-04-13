@@ -1,9 +1,11 @@
 <template>
-<md-card class="success">
+<md-card class="contribute">
     <md-card-header>
-        <div class="md-title">Success! Wij hebben je pensioen toegevoegd aan je onderstaande pensioenfonds:</div>
+        <div class="md-title">In je cadeau bij een van je active pensioenfondsen:</div>
     </md-card-header>
-  <md-card>
+
+    <!-- Cards per pension //-->
+  <md-card v-for="(pension, index) in pensions" :key="index">
     <md-card-header>
       <md-card-header-text>
         <div class="md-title">Stichting pensioenfoends ABP</div>
@@ -16,6 +18,7 @@
       </md-card-media>
     </md-card-header>
   </md-card>
+
   <md-card-content></md-card-content>
   <md-card-actions>
     <md-button class="md-raised md-primary" @click="$emit('goto', 0)">Nog een keer</md-button>
@@ -25,10 +28,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 
 @Component
-export default class Success extends Vue {}
+export default class Contribute extends Vue {
+  @Prop() private pensions!: { [key: string]: string }[];
+}
 </script>
 
 <style scoped lang="scss">

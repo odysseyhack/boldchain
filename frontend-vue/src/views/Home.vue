@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <b-row>
-      <b-col md="3"></b-col>
-      <b-col md="6">
+      <b-col lg="3"></b-col>
+      <b-col lg="6">
       <transition name="component-fade" mode="out-in">
         <component
           v-bind:is="currentComponent"
@@ -14,7 +14,7 @@
         />
       </transition>
       </b-col>
-      <b-col md="3"></b-col>
+      <b-col lg="3"></b-col>
     </b-row>
   </div>
 </template>
@@ -25,9 +25,11 @@ import Redeem from '@/components/Redeem.vue';
 import PivotLogin from '@/components/PivotLogin.vue';
 import Success from '@/components/Success.vue';
 import NewPension from '@/components/NewPension.vue';
+import Contribute from '@/components/Contribute.vue';
 
 @Component({
   components: {
+    Contribute,
     Redeem,
     PivotLogin,
     Success,
@@ -38,9 +40,12 @@ export default class Home extends Vue {
   private currentStep: number = 0;
   private amount: number = 0;
   private redeemCode: string = '';
+  private pensions: { [key: string]: string }[] = [];
+  private firstName: string = '';
+  private lastName: string = '';
 
   get currentComponent(): string {
-    const components = ['redeem', 'pivot-login', 'success', 'new-pension'];
+    const components = ['redeem', 'pivot-login', 'contribute', 'success', 'new-pension'];
     return components[this.currentStep];
   }
 
@@ -50,7 +55,15 @@ export default class Home extends Vue {
     this.currentStep = 1;
   }
 
-  private login(response: {}): void {
+  private login(response: { 
+    pension_funds: {
+      [key: string]: string }[],
+      first_name: string,
+      last_name: string
+    }): void {
+    this.pensions = response.pension_funds;
+    this.lastName = response.last_name;
+    this.firstName = response.first_name;
     this.currentStep = 2;
   }
 }
