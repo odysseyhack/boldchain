@@ -1,10 +1,9 @@
 <template>
   <md-card class="pivot-login">
     <md-card-header>
-      Pivot login
+      Digid login
     </md-card-header>
-    Er staat zoveel euro op je kaart
-    Pivot login
+    Er staat zoveel euro op je kaart. Login met Digid om je pensioen te ontvangen!
     <md-card-content>
       <md-field>
         <md-input id="username" name="username" v-model="username" placeholder="Pivot ID/ Digid login" />
