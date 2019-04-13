@@ -25,13 +25,16 @@
       smooth>
     </trend>
   <transition name="component-fade" mode="out-in">
-    <span v-show="showSpan"><h1>€ 10.000</h1></span>
+    <span v-show="showSpan">
+      <p>Dat kan in je pensoenfonds</p>
+      <h1>€ 10.000</h1>
+      <p> worden </p>
+      </span>
   </transition>
   <transition name="component-fade" mode="out-in">
     <span v-show="showMsg">Top, klaar. Ik wil nu:</span>
   </transition>
-  </md-card-content>
-  <md-card-actions>
+  <md-card-actions v-show="showMsg" class="md-alignment-center">
     <b-row>
       <b-col md="6">
         <md-button class="md-raised md-primary" @click="$emit('goto', 0)">extra kaart toevoegen</md-button>
@@ -41,6 +44,7 @@
       </b-col>
     </b-row>
   </md-card-actions>
+  </md-card-content>
 </md-card>
 </template>
 
@@ -58,7 +62,7 @@ export default class Success extends ImgUrls {
 
   private mounted() {
     setTimeout(() => { this.showSpan = true }, 2000);
-    setTimeout(() => { this.showMsg = true }, 2800);
+    setTimeout(() => { this.showMsg = true }, 3500);
   }
 }
 </script>

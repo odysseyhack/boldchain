@@ -1,5 +1,8 @@
 <template>
   <div class="home">
+    <header id="header">
+      <h1>Pension Present</h1>
+    </header>
     <b-row>
       <b-col lg="2"></b-col>
       <b-col lg="8">
@@ -86,6 +89,20 @@ export default class Home extends Vue {
 /* .component-fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: orange;
+}
+#header h1 {
+  color: #FFF;
+  text-align: left;
+  font-size: 2em;
+  font-weight: bold
+}
+
 .home {
   padding-top: 10rem;
 }
