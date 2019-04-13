@@ -8,13 +8,15 @@
   <md-card v-for="(pension, index) in pensions" :key="index">
     <md-card-header>
       <md-card-header-text>
-        <div class="md-title">Pensioenfoends {{ pension.ascription }}</div>
-        <div class="md-title">€ {{ pension.fulltime_salary }} opgebouwd</div>
+        <b-row>
+          <b-col md="4">
+            <img :src="getImgUrl(pension.ascription)" v-bind:alt="pension.ascription">
+          </b-col>
+          <b-col md="8">
+            <div class="md-title">Pensioenfonds {{ pension.ascription }}</div>
+          </b-col>
+        </b-row>
       </md-card-header-text>
-
-      <md-card-media>
-        <img :src="getImgUrl(pension.ascription)" v-bind:alt="pension.ascription">
-      </md-card-media>
       <md-card-actions>
         <md-button class="md-raised md-accent" @click="submit(pension.ascription)">Toevoegen</md-button>
       </md-card-actions>
@@ -36,9 +38,9 @@ export default class Contribute extends Vue {
     this.$emit('contribute', pensionName);
   }
 
-  private getImgUrl(picture: string) {
-    return require('../assets/' + picture + '.png')
-  }
+  private getImgUrl (picture: string) {
+      return require('../assets/' + picture + '.png');
+  };
 }
 </script>
 

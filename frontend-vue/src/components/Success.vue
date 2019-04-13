@@ -6,17 +6,18 @@
   <md-card>
     <md-card-header>
       <md-card-header-text>
-        <div class="md-title">Stichting pensioenfoends ABP</div>
-        <div class="md-title">€ 37 opgebouwd</div>
-        <div class="md-subhead">Vanaf 67 jaar en 3 maanden</div>
+        <b-row>
+          <b-col md="4">
+            <img :src="getImgUrl(pensionName)" v-bind:alt="pensionName">
+          </b-col>
+          <b-col md="8">
+            <div class="md-title">Pensioenfonds {{ pensionName }}</div>
+          </b-col>
+        </b-row>
       </md-card-header-text>
 
-      <md-card-media>
-        <img src="../assets/ABP.png" alt="ABP">
-      </md-card-media>
     </md-card-header>
   </md-card>
-  <md-card-content></md-card-content>
   <md-card-actions>
     <md-button class="md-raised md-primary" @click="$emit('goto', 0)">Nog een keer</md-button>
     <md-button class="md-raised md-primary">Leer meer</md-button>
@@ -31,6 +32,9 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 export default class Success extends Vue {
   @Prop() private pensionName!: string;
 
+  private getImgUrl (picture: string) {
+      return require('../assets/' + picture + '.png');
+  };
 }
 </script>
 
