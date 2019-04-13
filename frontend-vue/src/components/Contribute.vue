@@ -29,18 +29,15 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
+import ImgUrls from '@/mixins/ImgUrls.vue';
 
 @Component
-export default class Contribute extends Vue {
+export default class Contribute extends ImgUrls {
   @Prop() private pensions!: { [key: string]: string }[];
 
   private submit(pensionName: string): void {
     this.$emit('contribute', pensionName);
   }
-
-  private getImgUrl (picture: string) {
-      return require('../assets/' + picture + '.png');
-  };
 }
 </script>
 
