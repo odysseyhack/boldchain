@@ -1,7 +1,7 @@
 <template>
 <md-card class="contribute">
     <md-card-header>
-        <div class="md-title">Voeg je cadeau van €{{ amount }} toe aan een van je active pensioenfondsen:</div>
+        <div class="md-title">Stort je cadeau van €{{ amount }} in een van je actieve pensioenfondsen:</div>
     </md-card-header>
 
     <!-- Cards per pension //-->

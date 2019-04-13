@@ -1,7 +1,7 @@
 <template>
 <md-card class="success">
   <md-card-header>
-      <div class="md-title">Gelukt! Je cadeau is toegevoegd aan je onderstaande pensioenfonds:</div>
+    <div class="md-title">Gelukt! Je cadeau is toegevoegd.</div>
   </md-card-header>
   <md-card>
     <md-card-header>
@@ -25,7 +25,7 @@
       smooth>
     </trend>
   <transition name="component-fade" mode="out-in">
-    <span v-show="showSpan"><h1>€ 10000</h1></span>
+    <span v-show="showSpan"><h1>€ 10.000</h1></span>
   </transition>
   <transition name="component-fade" mode="out-in">
     <span v-show="showMsg">Top, klaar. Ik wil nu:</span>
