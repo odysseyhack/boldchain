@@ -25,11 +25,7 @@
       smooth>
     </trend>
   <transition name="component-fade" mode="out-in">
-    <span v-show="showSpan">
-      <p>Dat kan in je pensoenfonds</p>
-      <h1>€ 10.000</h1>
-      <p> worden </p>
-      </span>
+    <span v-show="showSpan"><h1>€ 150</h1></span>
   </transition>
   <transition name="component-fade" mode="out-in">
     <span v-show="showMsg">Top, klaar. Ik wil nu:</span>
@@ -40,7 +36,7 @@
         <md-button class="md-raised md-primary" @click="$emit('goto', 0)">extra kaart toevoegen</md-button>
       </b-col>
       <b-col md="6">
-        <md-button class="md-raised md-primary">Leer over pensioenen</md-button>
+        <md-button class="md-raised md-primary" @click="learn">Leer over pensioenen</md-button>
       </b-col>
     </b-row>
   </md-card-actions>
@@ -63,6 +59,10 @@ export default class Success extends ImgUrls {
   private mounted() {
     setTimeout(() => { this.showSpan = true }, 2000);
     setTimeout(() => { this.showMsg = true }, 3500);
+  }
+
+  private learn() {
+    window.open('http://www.abp.nl');
   }
 }
 </script>
