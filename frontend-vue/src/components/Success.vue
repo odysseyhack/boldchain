@@ -28,7 +28,7 @@
     <span v-show="showSpan"><h1>€ 150</h1></span>
   </transition>
   <transition name="component-fade" mode="out-in">
-    <span v-show="showMsg">Top, klaar. Ik wil nu:</span>
+    <span v-show="showMsg"><h3>Top, klaar. Ik wil nu:</h3></span>
   </transition>
   <md-card-actions v-show="showMsg" class="md-alignment-center">
     <b-row>
