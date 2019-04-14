@@ -4,7 +4,7 @@
     </md-card-header>
     <md-card-content>
       <h2>
-    Zo lief, je hebt <span class="amount">€{{ amount }}</span> pensioenbijdrage cadeau gekregen. Dat kan wel <span class="amount">€200</span> bij een pensioenfonds worden!
+    Zo lief, je hebt <span class="amount">€{{ amount }}</span> pensioenbijdrage cadeau gekregen. Dat kan wel <span class="amount">€ {{ amount * 15 }}</span> bij een pensioenfonds worden!
       </h2>
       <h4>
         Login met je Digid om het toe te voegen.
